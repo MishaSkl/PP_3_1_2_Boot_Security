@@ -285,7 +285,7 @@
                         <h5 class="card-header">Add new user</h5>
                         <div class="form-justify-content-center mx-auto col-4">
                             <form class="text-center" role="form" th:method="POST" th:object="${user}"
-                                  th:action="@{/admin}">
+                                  th:href="@{/admin}">
                                 <div class="card-body text-center">
                                     <label for="username"><b>First name</b></label>
                                     <input th:name="username" th:type="text" class="form-control"
