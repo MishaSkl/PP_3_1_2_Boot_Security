@@ -17,18 +17,18 @@
 
 <!--кнопка Logout-->
 
-<!--<nav class="navbar" style="background-color: #313131">-->
-<!--    <div class="container-fluid">-->
-<!--        <p class="navbar-brand text-white">-->
-<!--            <b><span class="align-middle" th:text="${login.email}"></span></b>-->
-<!--            <span class="align-middle">with roles:</span>-->
-<!--            <span class="align-middle" th:text="${login.getRoles()}"></span>-->
-<!--        </p>-->
-<!--        <form th:action="@{/logout}" method="POST">-->
-<!--            <input class="btn text-secondary" type="submit" value="Logout">-->
-<!--        </form>-->
-<!--    </div>-->
-<!--</nav>-->
+<nav class="navbar" style="background-color: #313131">
+    <div class="container-fluid">
+        <p class="navbar-brand text-white">
+            <b><span class="align-middle" th:text="${admin.email}"></span></b>
+            <span class="align-middle">with roles:</span>
+            <span class="align-middle" th:text="${admin.getRoles()}"></span>
+        </p>
+        <form th:action="@{/logout}" method="POST">
+            <input class="btn text-secondary" type="submit" value="Logout">
+        </form>
+    </div>
+</nav>
 
 
 <!--боковая панель работает-->
