@@ -151,6 +151,32 @@ public class User implements UserDetails {
         return true;
     }
 
+
+
+
+
+
+
+
+
+    public String convertSetOfRoleToString(Set<Role> roles) {
+        StringBuilder sb = new StringBuilder();
+        for (Role role : roles) {
+            if (role.getRole().contains("ROLE_ADMIN")) {
+                sb.append("ADMIN ");
+            } else if (role.getRole().contains("ROLE_USER")) {
+                sb.append("USER ");
+            }
+        }
+        return sb.toString();
+    }
+
+
+
+
+
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -178,4 +204,5 @@ public class User implements UserDetails {
                 ", roles=" + roles +
                 '}';
     }
+
 }
