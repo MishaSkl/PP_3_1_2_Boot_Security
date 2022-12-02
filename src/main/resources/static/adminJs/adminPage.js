@@ -28,7 +28,20 @@ function loadTableData(listOfUsers) {
             <td>${user.age}</td>
             <td>${user.email}</td>
             <td>${roles}</td>
-          
+            <td>
+                <button class="btn btn-primary" data-bs-toggle="modal" 
+                           data-bs-target="#editModal"
+                           onclick="editModalData(${user.id})">
+                           Edit
+                </button>
+            </td>
+            <td>
+                <button class="btn btn-danger" data-bs-toggle="modal" 
+                           data-bs-target="#deleteModal"
+                           onclick="deleteModalData(${user.id})">
+                    Delete
+                </button>
+            </td>
             </tr>`
     }
     tableBody.innerHTML = dataHtml;
