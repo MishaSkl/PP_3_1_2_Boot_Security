@@ -1,0 +1,37 @@
+const url = '/rest/admin/allPage'
+
+async function getAllUserRest() {
+    let page = await fetch(url)
+
+    if (page.ok) {
+        let listOfUsers = await page.json();
+        loadTableData(listOfUsers)
+    } else {
+        alert(`Error, ${page.status}`);
+    }
+}
+
+function loadTableData(listOfUsers) {
+    const tableBody = document.getElementById('tbody');
+    let dataHtml = '';
+
+    for (let user of listOfUsers) {
+        let roles = [];
+
+        for (let role of user.roles) {
+            roles.push(" " + role.role.toString().replaceAll('ROLE_', ''))
+        }
+        dataHtml += `<tr>
+           <td>${user.id}</td>
+            <td>${user.username}</td>
+            <td>${user.surname}</td>
+            <td>${user.age}</td>
+            <td>${user.email}</td>
+            <td>${roles}</td>
+          
+            </tr>`
+    }
+    tableBody.innerHTML = dataHtml;
+}
+
+getAllUserRest();

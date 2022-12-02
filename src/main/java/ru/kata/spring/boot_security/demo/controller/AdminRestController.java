@@ -10,7 +10,7 @@ import ru.kata.spring.boot_security.demo.service.UserService;
 import java.util.List;
 
 @RestController
-@RequestMapping("admin/rest")
+@RequestMapping("rest/admin")
 public class AdminRestController {
 
     private final UserService userService;
@@ -20,9 +20,10 @@ public class AdminRestController {
         this.userService = userService;
     }
 
-    @GetMapping
+    @GetMapping("/allPage")
     public ResponseEntity<List<User>> getAllUserRest() {
-        return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
+        List<User> listOfUsers = userService.getAllUsers();
+        return new ResponseEntity<>(listOfUsers, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
