@@ -40,11 +40,12 @@ async function editUser() {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            username: form_ed.username.value,
-            surname: form_ed.surname.value,
-            age: form_ed.age.value,
-            email: form_ed.email.value,
-            password: form_ed.password.value,
+            id: document.getElementById("id_ed").value,
+            username: document.getElementById("username_ed").value,
+            surname: document.getElementById("surname_ed").value,
+            age: document.getElementById("age_ed").value,
+            email: document.getElementById("email_ed").value,
+            password: document.getElementById("password_ed").value,
             roles: listOfRole
         })
     }
@@ -54,5 +55,7 @@ async function editUser() {
         getAllUserRest();
     })
 }
+
+
 
 
